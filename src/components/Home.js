@@ -9,8 +9,8 @@ import { BrowserRouter } from 'react-router-dom';
 const Home = () => {
     return (
         <BrowserRouter>
-            <Container>
-                <p>Text container</p>
+            <Container text primary>
+                <p primary>Text container</p>
             </Container>
         </BrowserRouter>
     )
