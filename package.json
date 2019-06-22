@@ -19,7 +19,8 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "jest",
+    "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "eject": "craco eject"
   },
   "eslintConfig": {
@@ -44,11 +45,16 @@
     "verbose": true,
     "collectCoverage": true
   },
+  "nyc": {
+    "sourceMap": false,
+    "instrument": false
+    },
   "devDependencies": {
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@craco/craco": "^5.2.3",
     "@testing-library/react": "^8.0.1",
+    "coveralls": "^3.0.4",
     "craco-less": "^1.9.0",
     "jest-dom": "^3.5.0",
     "jsdom": "^15.1.1",
