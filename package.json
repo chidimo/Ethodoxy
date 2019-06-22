@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/preset-env": "^7.4.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
@@ -19,7 +20,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test",
+    "test": "jest",
     "eject": "craco eject"
   },
   "eslintConfig": {
@@ -37,9 +38,20 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "verbose": true,
+    "collectCoverage": true
+  },
   "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
     "@craco/craco": "^5.2.3",
+    "@testing-library/react": "^8.0.1",
     "craco-less": "^1.9.0",
+    "jest-dom": "^3.5.0",
+    "jsdom": "^15.1.1",
     "semantic-ui-less": "^2.4.1"
   }
 }
