@@ -1,0 +1,18 @@
+{
+    "extends" : [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:jest/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "semi": "error",
+        "react/jsx-indent": "[true, 'tab'|4, {checkAttributes: true indentLogicalExpressions: true}]"
+    }
+}
