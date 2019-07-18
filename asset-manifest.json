@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.css": "/Ethodoxy-Frontend/static/css/main.cba5cd10.chunk.css",
-    "main.js": "/Ethodoxy-Frontend/static/js/main.dd9f5b64.chunk.js",
-    "main.js.map": "/Ethodoxy-Frontend/static/js/main.dd9f5b64.chunk.js.map",
-    "runtime~main.js": "/Ethodoxy-Frontend/static/js/runtime~main.4162936a.js",
-    "runtime~main.js.map": "/Ethodoxy-Frontend/static/js/runtime~main.4162936a.js.map",
-    "static/js/2.d002b2ba.chunk.js": "/Ethodoxy-Frontend/static/js/2.d002b2ba.chunk.js",
-    "static/js/2.d002b2ba.chunk.js.map": "/Ethodoxy-Frontend/static/js/2.d002b2ba.chunk.js.map",
+    "main.css": "/Ethodoxy-Frontend/static/css/main.225ffaf1.chunk.css",
+    "main.js": "/Ethodoxy-Frontend/static/js/main.2df955bc.chunk.js",
+    "main.js.map": "/Ethodoxy-Frontend/static/js/main.2df955bc.chunk.js.map",
+    "runtime~main.js": "/Ethodoxy-Frontend/static/js/runtime~main.58a180c6.js",
+    "runtime~main.js.map": "/Ethodoxy-Frontend/static/js/runtime~main.58a180c6.js.map",
+    "static/css/2.5ec480d0.chunk.css": "/Ethodoxy-Frontend/static/css/2.5ec480d0.chunk.css",
+    "static/js/2.6bb17d7c.chunk.js": "/Ethodoxy-Frontend/static/js/2.6bb17d7c.chunk.js",
+    "static/js/2.6bb17d7c.chunk.js.map": "/Ethodoxy-Frontend/static/js/2.6bb17d7c.chunk.js.map",
+    "static/js/3.f54c7fff.chunk.js": "/Ethodoxy-Frontend/static/js/3.f54c7fff.chunk.js",
+    "static/js/3.f54c7fff.chunk.js.map": "/Ethodoxy-Frontend/static/js/3.f54c7fff.chunk.js.map",
     "index.html": "/Ethodoxy-Frontend/index.html",
-    "precache-manifest.4f67579f0aa6868df20cd9ef91cb6bd9.js": "/Ethodoxy-Frontend/precache-manifest.4f67579f0aa6868df20cd9ef91cb6bd9.js",
+    "precache-manifest.9ebbe9fcd2a7edfa49c3a03becf8d8ce.js": "/Ethodoxy-Frontend/precache-manifest.9ebbe9fcd2a7edfa49c3a03becf8d8ce.js",
     "service-worker.js": "/Ethodoxy-Frontend/service-worker.js",
-    "static/css/main.cba5cd10.chunk.css.map": "/Ethodoxy-Frontend/static/css/main.cba5cd10.chunk.css.map"
+    "static/css/2.5ec480d0.chunk.css.map": "/Ethodoxy-Frontend/static/css/2.5ec480d0.chunk.css.map",
+    "static/css/main.225ffaf1.chunk.css.map": "/Ethodoxy-Frontend/static/css/main.225ffaf1.chunk.css.map"
   }
 }
