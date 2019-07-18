@@ -4,14 +4,16 @@ import PageLoader from "./PageLoader";
 import PublicRoute from "../routes/PublicRoute";
 import Error404 from "./Error404";
 
-// create Loadable pages
+const env = process.env.NODE_ENV;
+const path = env === 'development' ? '/' : '/React-Redux-Starter/'
+
 const Home = lazy(() => import("./Home"));
 
 const Routes = () => (
     <Router>
         <Suspense fallback={<PageLoader />}>
             <Switch>
-                <PublicRoute exact path="/" component={Home} />
+                <PublicRoute exact path={ path } component={Home} />
 
                 {/* catch all invalid urls */}
                 <Route component={Error404} />
