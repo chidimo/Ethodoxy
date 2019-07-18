@@ -1,24 +1,23 @@
 language: node_js
 env:
-  global:
-    - CC_TEST_REPORTER_ID=f9b005dd05d6cf7849f22ee7d91f197a81979d400077e3d9f9fcc6de3c4159da
-    - NODE_ENV=test
-before_install:
-  - sudo sed -i -e '/local.*peer/s/postgres/all/' -e 's/peer\|md5/trust/g' /etc/postgresql/*/main/pg_hba.conf
-  - sudo service postgresql restart
-  - sleep 1
+    global:
+        - CC_TEST_REPORTER_ID=7995f3da35a712977913f19652d5cbd21dc424fbf7cf20879c9acb9f5003c3c3
+        - NODE_ENV=test
 matrix:
-  include:
-  - node_js: '10'
-  - node_js: '12'
+    include:
+    #   - node_js: '10'
+    - node_js: '12'
 cache:
-  directories: node_modules
+    directories: node_modules
 
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+    - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+    - chmod +x ./cc-test-reporter
+    - ./cc-test-reporter before-build
 script:
-  - yarn coverage
+    - yarn test
+after_success:
+    - yarn coverage
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+    - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.json coverage/lcov.info
+    - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

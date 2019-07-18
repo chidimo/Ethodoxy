@@ -1,63 +1,62 @@
 {
-  "name": "ethodoxy-frontend",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.1.0",
-    "react-router": "^5.0.1",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
-    "redux": "^4.0.1",
-    "redux-logger": "^3.0.6",
-    "redux-persist": "^5.10.0",
-    "redux-thunk": "^2.3.0",
-    "semantic-ui-react": "^0.87.2",
-    "titlecase": "^1.1.3"
-  },
-  "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
-    "eject": "craco eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.jsx?$": "babel-jest"
+    "name": "ethodoxy-frontend",
+    "version": "0.1.0",
+    "private": true,
+    "homepage": "http://chidimo.github.io/Ethodoxy-Frontend",
+    "dependencies": {
+        "@babel/preset-env": "^7.5.4",
+        "@babel/preset-react": "^7.0.0",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-redux": "^7.1.0",
+        "react-scripts": "3.0.1",
+        "redux": "^4.0.4",
+        "redux-logger": "^3.0.6",
+        "redux-mock-store": "^1.5.3",
+        "redux-thunk": "^2.3.0"
     },
-    "verbose": true,
-    "collectCoverage": true
-  },
-  "nyc": {
-    "sourceMap": false,
-    "instrument": false
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "jest",
+        "coverage": "cat ./coverage/lcov.info | coveralls",
+        "test:watch": "jest --watch",
+        "eject": "react-scripts eject",
+        "lint": "./node_modules/.bin/eslint ./src",
+        "pretty": "prettier --write '**/*.{ts,js,css,html,json,md}'",
+        "deploy": "gh-pages -d build",
+        "predeploy": "yarn build"
     },
-  "devDependencies": {
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "@craco/craco": "^5.2.3",
-    "@testing-library/react": "^8.0.1",
-    "coveralls": "^3.0.4",
-    "craco-less": "^1.9.0",
-    "jest-dom": "^3.5.0",
-    "jsdom": "^15.1.1",
-    "semantic-ui-less": "^2.4.1"
-  }
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "jest": {
+        "collectCoverage": true,
+        "transform": {
+            "^.+\\.jsx?$": "babel-jest"
+        },
+        "verbose": true
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^4.0.0",
+        "@testing-library/react": "^8.0.5",
+        "coveralls": "^3.0.5",
+        "eslint-plugin-jest": "^22.9.0",
+        "eslint-plugin-react": "^7.14.2",
+        "gh-pages": "^2.0.1",
+        "prettier": "^1.18.2",
+        "prop-types": "^15.7.2"
+    }
 }
