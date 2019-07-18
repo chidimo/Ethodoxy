@@ -5,7 +5,7 @@ import PublicRoute from "../routes/PublicRoute";
 import Error404 from "./Error404";
 
 const env = process.env.NODE_ENV;
-const path = env === 'development' ? '/' : '/React-Redux-Starter/'
+const path = env === 'development' ? '/' : '/Ethodoxy-Frontend/'
 
 const Home = lazy(() => import("./Home"));
 
