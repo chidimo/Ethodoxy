@@ -31,8 +31,8 @@ const PublicRoute = ({ component: Component, ...rest }) => {
 };
 
 PublicRoute.propTypes = {
-    component: propTypes.func.isRequired,
-    error: propTypes.bool.isRequired
+    component: propTypes.object.isRequired,
+    error: propTypes.bool
 };
 
 export default PublicRoute;
