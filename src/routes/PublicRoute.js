@@ -1,8 +1,10 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import ErrorBoundary from "../components/ErrorBoundary";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import ErrorBoundary from '../components/ErrorBoundary';
+import propTypes from 'prop-types';
+
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 
 const PublicRoute = ({ component: Component, ...rest }) => {
     return (
@@ -13,7 +15,10 @@ const PublicRoute = ({ component: Component, ...rest }) => {
                     <ErrorBoundary>
                         <div>
                             <NavBar />
-                            <main className="container" id="public-route-layout">
+                            <main
+                                className="container"
+                                id="public-route-layout"
+                            >
                                 <Component {...props} />
                             </main>
                         </div>
@@ -23,6 +28,11 @@ const PublicRoute = ({ component: Component, ...rest }) => {
             }}
         />
     );
+};
+
+PublicRoute.propTypes = {
+    component: propTypes.func.isRequired,
+    error: propTypes.bool.isRequired
 };
 
 export default PublicRoute;

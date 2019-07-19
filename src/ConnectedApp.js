@@ -1,7 +1,7 @@
-import React from "react";
-import { Provider } from "react-redux";
-import store from "./store";
-import AppRoutes from "./components/AppRoutes";
+import React from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
+import AppRoutes from './components/AppRoutes';
 
 const ConnectedApp = () => {
     return (
