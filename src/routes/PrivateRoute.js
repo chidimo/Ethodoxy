@@ -1,8 +1,10 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
-import ErrorBoundary from "../components/ErrorBoundary";
-import NavBar from "../components/NavBar";
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import propTypes from 'prop-types';
+
+import ErrorBoundary from '../components/ErrorBoundary';
+import NavBar from '../components/NavBar';
 
 const PrivateRoute = ({ component: Component, auth, ...rest }) => {
     return (
@@ -29,6 +31,13 @@ const PrivateRoute = ({ component: Component, auth, ...rest }) => {
             }}
         />
     );
+};
+
+PrivateRoute.propTypes = {
+    component: propTypes.func.isRequired,
+    auth: propTypes.shape({
+        isAuthenticated: propTypes.bool.isRequired,
+    })
 };
 
 const mapStateToProps = ({ auth }) => ({

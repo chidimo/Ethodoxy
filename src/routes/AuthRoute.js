@@ -1,7 +1,9 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
-import ErrorBoundary from "../components/ErrorBoundary";
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import propTypes from 'prop-types';
+
+import ErrorBoundary from '../components/ErrorBoundary';
 
 const AuthRoute = ({ component: Component, auth, ...rest }) => {
     return (
@@ -23,6 +25,13 @@ const AuthRoute = ({ component: Component, auth, ...rest }) => {
             }}
         />
     );
+};
+
+AuthRoute.propTypes = {
+    component: propTypes.func.isRequired,
+    auth: propTypes.shape({
+        isAuthenticated: propTypes.bool.isRequired,
+    })
 };
 
 const mapStateToProps = ({ auth }) => ({

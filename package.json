@@ -1,8 +1,8 @@
 {
-    "name": "ethodoxy-frontend",
+    "name": "ethodoxy",
     "version": "0.1.0",
     "private": true,
-    "homepage": "http://chidimo.github.io/Ethodoxy-Frontend",
+    "homepage": "http://chidimo.github.io/Ethodoxy",
     "dependencies": {
         "@babel/preset-env": "^7.5.4",
         "@babel/preset-react": "^7.0.0",
@@ -48,15 +48,23 @@
         ]
     },
     "jest": {
+        "verbose": true,
         "collectCoverage": true,
         "transform": {
             "^.+\\.jsx?$": "babel-jest"
         },
-        "verbose": true
+        "moduleNameMapper": {
+            "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+        }
     },
     "devDependencies": {
+        "@babel/cli": "^7.5.5",
+        "@babel/core": "^7.5.5",
+        "@babel/plugin-proposal-class-properties": "^7.5.5",
+        "@babel/plugin-transform-runtime": "^7.5.5",
         "@testing-library/jest-dom": "^4.0.0",
         "@testing-library/react": "^8.0.5",
+        "babel-jest": "^24.8.0",
         "coveralls": "^3.0.5",
         "eslint-plugin-jest": "^22.9.0",
         "eslint-plugin-react": "^7.14.2",
