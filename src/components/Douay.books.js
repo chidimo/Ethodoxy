@@ -21,13 +21,13 @@ const useStyles = makeStyles({
 const DouayBooks = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const [books, setBooks] = useState(['a']);
+    const [ books, setBooks ] = useState([ 'a' ]);
 
     useEffect(() => {
         const getBooks = async () => {
             let books = [];
             let url = DR_BOOKS_URL;
-            const config = { headers: { ...default_headers }};
+            const config = { headers: { ...default_headers } };
 
             while (url) {
                 const { data } = await axios.get(url, config);
@@ -39,7 +39,7 @@ const DouayBooks = () => {
             dispatch(get_drb_books(books));
         };
         getBooks();
-    }, [dispatch]);
+    }, [ dispatch ]);
 
 
     return (

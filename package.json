@@ -31,7 +31,7 @@
         "coverage": "cat ./coverage/lcov.info | coveralls",
         "test:watch": "jest --watch",
         "eject": "react-scripts eject",
-        "lint": "./node_modules/.bin/eslint ./src",
+        "lint": "./node_modules/.bin/eslint ./src ./__tests__",
         "pretty": "prettier --write 'src/**/*.{ts,js,css,html,json,md}'",
         "deploy": "gh-pages -d build",
         "predeploy": "yarn build"
@@ -59,7 +59,10 @@
         },
         "moduleNameMapper": {
             "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
-        }
+        },
+        "testMatch": [
+            "**/?(*.)+(spec|test).[jt]s?(x)"
+        ]
     },
     "devDependencies": {
         "@babel/cli": "^7.5.5",
@@ -73,6 +76,7 @@
         "eslint-plugin-jest": "^22.9.0",
         "eslint-plugin-react": "^7.14.2",
         "gh-pages": "^2.0.1",
+        "history": "^4.9.0",
         "prettier": "^1.18.2",
         "prop-types": "^15.7.2"
     }

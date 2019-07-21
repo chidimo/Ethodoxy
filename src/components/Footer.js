@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer>
             <p>
-                Built with <code>React</code> and <code>material UI</code> (<code>orjichidi95@gmail.com</code>)
+                Built with React and material UI by orjichidi95@gmail.com
             </p>
         </footer>
     );

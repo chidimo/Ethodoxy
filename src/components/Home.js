@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import { connect } from 'react-redux';
 
 import LinkGridItem from './LinkGridItem';
 
@@ -37,8 +36,4 @@ Home.propTypes = {
     auth: PropTypes.string
 };
 
-const mapStateToProps = ({ auth }) => {
-    return { auth };
-};
-
-export default connect(mapStateToProps)(Home);
+export default Home;
