@@ -1,6 +1,10 @@
 import { GET_DRB_BOOKS } from '../actions/actions.types';
 
-const drbReducer = (state = {}, action) => {
+const initialState = {
+    books: [],
+};
+
+const drbReducer = (state=initialState, action) => {
     // console.log('action ....', action);
     switch(action.type) {
     case GET_DRB_BOOKS:

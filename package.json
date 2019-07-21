@@ -13,7 +13,7 @@
         "react-dom": "^16.8.6",
         "react-loader-spinner": "^2.3.0",
         "react-redux": "^7.1.0",
-        "react-redux-loading": "^1.0.1",
+        "react-redux-loading-bar": "^4.3.0",
         "react-router": "^5.0.1",
         "react-router-dom": "^5.0.1",
         "react-scripts": "3.0.1",
