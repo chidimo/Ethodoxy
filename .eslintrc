@@ -35,5 +35,7 @@
         "quotes": ["error", "single"],
         "semi": ["error", "always"],
         "no-console": 1,
+        "object-curly-spacing": ["warn", "always"],
+        "array-bracket-spacing": ["warn", "always"]
       },
 }

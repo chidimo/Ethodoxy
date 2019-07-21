@@ -11,6 +11,7 @@ class ErrorBoundary extends Component {
 
     componentDidCatch(error, info) {
         // You can also log the error to an error reporting service
+        // eslint-disable-next-line no-console
         console.log({ error, info });
     }
 
@@ -27,7 +28,9 @@ class ErrorBoundary extends Component {
 }
 
 ErrorBoundary.propTypes = {
-    children: propTypes.object.isRequired
+    children: propTypes.oneOfType([
+        propTypes.array, propTypes.object
+    ]).isRequired,
 };
 
 export default ErrorBoundary;

@@ -42,15 +42,6 @@ const useStyles = makeStyles(theme => ({
             width: 'auto'
         }
     },
-    searchIcon: {
-        width: theme.spacing(7),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
     inputRoot: {
         color: 'inherit'
     },
@@ -78,8 +69,8 @@ const useStyles = makeStyles(theme => ({
 
 const NavBar = () => {
     const classes = useStyles();
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+    const [ anchorEl, setAnchorEl ] = React.useState(null);
+    const [ mobileMoreAnchorEl, setMobileMoreAnchorEl ] = React.useState(null);
 
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -173,7 +164,7 @@ const NavBar = () => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography className={classes.title} variant="h6" noWrap>
+                    <Typography className={classes.title} variant="h5" noWrap>
                         Ethodoxy
                     </Typography>
 
