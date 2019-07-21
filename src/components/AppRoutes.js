@@ -4,16 +4,16 @@ import PageLoader from './PageLoader';
 import PublicRoute from '../routes/PublicRoute';
 import Error404 from './Error404';
 
-const env = process.env.NODE_ENV;
-const path = env === 'development' ? '/' : '/Ethodoxy/';
-
 const Home = lazy(() => import('./Home'));
+const DouayBooks = lazy(() => import('./Douay.books'));
 
 const Routes = () => (
-    <Router>
+    // eslint-disable-next-line no-undef
+    <Router basename={process.env.PUBLIC_URL}>
         <Suspense fallback={<PageLoader />}>
             <Switch>
-                <PublicRoute exact path={path} component={Home} />
+                <PublicRoute exact path='/' component={ Home } />
+                <PublicRoute exact path='/douay-rheims-bible' component={ DouayBooks } />
 
                 {/* catch all invalid urls */}
                 <Route component={Error404} />

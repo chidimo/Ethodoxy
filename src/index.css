@@ -12,9 +12,9 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
+a {
+    text-decoration: none;
+    color: #1E3B9E;
 }
 
 #root {
@@ -44,7 +44,17 @@ code {
     min-height: 100vh;
 }
 
+.book-link {
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    background: #F5F5F6;
+    display: block;
+    width: 100%;
+}
+
 footer {
     text-align: center;
     background: #f5f5f5;
+    margin-top: 30px;
 }
