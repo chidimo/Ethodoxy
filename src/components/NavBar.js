@@ -42,15 +42,6 @@ const useStyles = makeStyles(theme => ({
             width: 'auto'
         }
     },
-    searchIcon: {
-        width: theme.spacing(7),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
     inputRoot: {
         color: 'inherit'
     },
@@ -173,7 +164,7 @@ const NavBar = () => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography className={classes.title} variant="h6" noWrap>
+                    <Typography className={classes.title} variant="h5" noWrap>
                         Ethodoxy
                     </Typography>
 
