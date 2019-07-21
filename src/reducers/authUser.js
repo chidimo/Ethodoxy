@@ -1,6 +1,6 @@
-import { SET_AUTH_USER } from '../actions/constants';
+import { SET_AUTH_USER } from '../actions/actions.types';
 
-export const auth = (state = 'AUTH_USER_ID', action) => {
+const auth = (state = 'AUTH_USER_ID', action) => {
     switch (action.type) {
     case SET_AUTH_USER:
         return action.id;
@@ -8,3 +8,5 @@ export const auth = (state = 'AUTH_USER_ID', action) => {
         return state;
     }
 };
+
+export default auth;
