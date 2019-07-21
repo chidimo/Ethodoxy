@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -165,7 +166,7 @@ const NavBar = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography className={classes.title} variant="h5" noWrap>
-                        Ethodoxy
+                        <Link to='/' className='branding'>Ethodoxy</Link>
                     </Typography>
 
                     <div className={classes.grow} />
