@@ -63,7 +63,11 @@
         },
         "testMatch": [
             "**/?(*.)+(spec|test).[jt]s?(x)"
-        ]
+        ],
+        "setupFilesAfterEnv": [
+            "@testing-library/react/cleanup-after-each"
+        ],
+        "clearMocks": true
     },
     "devDependencies": {
         "@babel/cli": "^7.5.5",

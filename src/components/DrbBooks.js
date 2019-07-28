@@ -1,16 +1,13 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import titlecase from 'titlecase';
 import slugify from 'slugify';
 
-import LoadingBar from 'react-redux-loading-bar';
-
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import LinkGridItem from './LinkGridItem';
 
-import { get_drb_books } from '../actions/drbActions';
 
 const useStyles = makeStyles({
     container: {
@@ -20,17 +17,13 @@ const useStyles = makeStyles({
 
 const DouayBooks = () => {
     const classes = useStyles();
-    const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(get_drb_books());
-    }, [ dispatch ]);
 
     const drbReducer = useSelector(state => state.drbReducer);
 
     return (
         <Fragment>
-            <LoadingBar />
+
             <h2>Douay-Rheims Bible</h2>
 
             <h3>Old Testament</h3>
