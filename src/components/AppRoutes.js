@@ -5,7 +5,7 @@ import PublicRoute from '../routes/PublicRoute';
 import Error404 from './Error404';
 
 const Home = lazy(() => import('./Home'));
-const DouayBooks = lazy(() => import('./Douay.books'));
+const DouayBooks = lazy(() => import('./DrbBooks'));
 
 const Routes = () => (
     // eslint-disable-next-line no-undef

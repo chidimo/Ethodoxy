@@ -17,6 +17,10 @@ a {
     color: #1E3B9E;
 }
 
+a.branding {
+    color: #FFFFFF;
+}
+
 #root {
     display: flex;
     flex-direction: column;

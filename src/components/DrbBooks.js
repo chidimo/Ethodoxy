@@ -1,13 +1,13 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { Fragment, useEffect } from 'react';
 import titlecase from 'titlecase';
 import slugify from 'slugify';
 
+import LoadingBar from 'react-redux-loading-bar';
+
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { DR_BOOKS_URL, default_headers } from '../constants';
 import LinkGridItem from './LinkGridItem';
 
 import { get_drb_books } from '../actions/drbActions';
@@ -21,29 +21,16 @@ const useStyles = makeStyles({
 const DouayBooks = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const [ books, setBooks ] = useState([ 'a' ]);
 
     useEffect(() => {
-        const getBooks = async () => {
-            let books = [];
-            let url = DR_BOOKS_URL;
-            const config = { headers: { ...default_headers } };
-
-            while (url) {
-                const { data } = await axios.get(url, config);
-                const { results, next } = data;
-                books = books.concat(results);
-                url = next;
-            }
-            setBooks(books);
-            dispatch(get_drb_books(books));
-        };
-        getBooks();
+        dispatch(get_drb_books());
     }, [ dispatch ]);
 
+    const drbReducer = useSelector(state => state.drbReducer);
 
     return (
         <Fragment>
+            <LoadingBar />
             <h2>Douay-Rheims Bible</h2>
 
             <h3>Old Testament</h3>
@@ -55,14 +42,14 @@ const DouayBooks = () => {
                 }}
             >
                 {
-                    books
+                    drbReducer.books
                         .filter(book => book.testament==='old testament')
                         .map(book => {
                             return (
                                 <LinkGridItem
                                     key={ book.id }
                                     title={ titlecase(book.name) }
-                                    location={ `/${slugify(book.name)}` }
+                                    location={ `/douay-rheims-bible/${slugify(book.name)}` }
                                 />
                             );
                         })
@@ -78,14 +65,14 @@ const DouayBooks = () => {
                 }}
             >
                 {
-                    books
+                    drbReducer.books
                         .filter(book => book.testament==='new testament')
                         .map(book => {
                             return (
                                 <LinkGridItem
                                     key={ book.id }
                                     title={ titlecase(book.name) }
-                                    location={ `/${slugify(book.name)}` }
+                                    location={ `/douay-rheims-bible/${slugify(book.name)}` }
                                 />
                             );
                         })
