@@ -1,9 +1,12 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { Fragment, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
+import LoadingBar from 'react-redux-loading-bar';
 import { makeStyles } from '@material-ui/core/styles';
+import { useDispatch } from 'react-redux';
 
 import LinkGridItem from './LinkGridItem';
+
+import { getDRBBooks } from '../actions/drbActions';
 
 const useStyles = makeStyles({
     container: {
@@ -12,10 +15,17 @@ const useStyles = makeStyles({
 });
 
 const Home = () => {
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        getDRBBooks()(dispatch);
+    }, [ dispatch ]);
+
     const classes = useStyles();
 
     return (
         <Fragment>
+            <LoadingBar />
             <h2>Available titles</h2>
             <Grid
                 container
@@ -29,11 +39,6 @@ const Home = () => {
             </Grid>
         </Fragment>
     );
-};
-
-
-Home.propTypes = {
-    auth: PropTypes.string
 };
 
 export default Home;
