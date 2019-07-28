@@ -1,15 +1,16 @@
 import React from 'react';
-import { cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import Home from '../src/components/Home';
-import { RenderWithRouter } from './Renderers';
-
-afterEach(cleanup);
+import { RenderWithReduxAndRouter } from './Renderers';
+import utils from '../src/actions/utils';
 
 describe('<Home /> ', () => {
-    it('renders without crashing', () => {
-        const { getByText } = RenderWithRouter(<Home />);
+    it('renders without crashing', async () => {
+        utils.getPaginatedItems = jest.fn().mockImplementationOnce(() => ({
+            books: []
+        }));
+        const { getByText } = RenderWithReduxAndRouter(<Home />);
         expect(getByText('Douay-Rheims Bible')).toBeInTheDocument();
         expect(getByText('Challoner Commentary')).toBeInTheDocument();
     });

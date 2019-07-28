@@ -1,11 +1,8 @@
 import React from 'react';
-import { cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import Error404 from '../src/components/Error404';
 import { RenderWithRouter } from './Renderers';
-
-afterEach(cleanup);
 
 describe('<Error404 /> ', () => {
     it('Displays error message', () => {
