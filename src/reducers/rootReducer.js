@@ -6,7 +6,7 @@ import drbReducer from './drbReducer';
 const rootReducer = combineReducers({
     auth,
     drbReducer,
-    loadingBar: loadingBarReducer,
+    loadingBar: loadingBarReducer
 });
 
 export default rootReducer;

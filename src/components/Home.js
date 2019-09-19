@@ -1,27 +1,39 @@
 import React, { Fragment, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 import Grid from '@material-ui/core/Grid';
 import LoadingBar from 'react-redux-loading-bar';
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch } from 'react-redux';
 
-import LinkGridItem from './LinkGridItem';
+import drbActions from '../actions/drbActions';
 
-import { getDRBBooks } from '../actions/drbActions';
-
-const useStyles = makeStyles({
+const useHomeStyles = makeStyles({
     container: {
         paddingTop: '20px'
-    },
+    }
+});
+
+const itemStyles = makeStyles({
+    item: {
+        // padding: '0px',
+        // margin: '5px',
+    }
 });
 
 const Home = () => {
-
     const dispatch = useDispatch();
     useEffect(() => {
-        getDRBBooks()(dispatch);
+        drbActions.getDRBBooks()(dispatch);
     }, [ dispatch ]);
 
-    const classes = useStyles();
+    const itemClasses = itemStyles();
+    const homeClasses = useHomeStyles();
+
+    const books = [
+        { id: 1, title: 'Douay-Rheims Bible', location: '/douay-rheims-bible' },
+        { id: 2, title: 'Challoner Commentary', location: '/challoner' }
+    ];
 
     return (
         <Fragment>
@@ -31,11 +43,25 @@ const Home = () => {
                 container
                 spacing={2}
                 classes={{
-                    root: classes.container
+                    root: homeClasses.container
                 }}
             >
-                <LinkGridItem title='Douay-Rheims Bible' location='/douay-rheims-bible' />
-                <LinkGridItem title='Challoner Commentary' location='/challoner' />
+                {books.map(book => {
+                    const { id, title, location } = book;
+                    return (
+                        <Grid
+                            key={id}
+                            item
+                            classes={{
+                                item: itemClasses.item
+                            }}
+                        >
+                            <Link className={'book-link'} to={location}>
+                                {title}
+                            </Link>
+                        </Grid>
+                    );
+                })}
             </Grid>
         </Fragment>
     );

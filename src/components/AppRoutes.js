@@ -12,8 +12,12 @@ const Routes = () => (
     <Router basename={process.env.PUBLIC_URL}>
         <Suspense fallback={<PageLoader />}>
             <Switch>
-                <PublicRoute exact path='/' component={ Home } />
-                <PublicRoute exact path='/douay-rheims-bible' component={ DouayBooks } />
+                <PublicRoute exact path="/" component={Home} />
+                <PublicRoute
+                    exact
+                    path="/douay-rheims-bible"
+                    component={DouayBooks}
+                />
 
                 {/* catch all invalid urls */}
                 <Route component={Error404} />

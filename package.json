@@ -33,7 +33,7 @@
         "test:watch": "jest --watch",
         "eject": "react-scripts eject",
         "lint": "./node_modules/.bin/eslint ./src ./__tests__",
-        "pretty": "prettier --write 'src/**/*.{ts,js,css,html,json,md}'",
+        "pretty": "prettier --write 'src/**/*.{ts,js,css,html,json,md}' '!build/**' '!public/**'",
         "deploy": "gh-pages -d build",
         "predeploy": "yarn build"
     },

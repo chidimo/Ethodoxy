@@ -14,11 +14,11 @@ body {
 
 a {
     text-decoration: none;
-    color: #1E3B9E;
+    color: #1e3b9e;
 }
 
 a.branding {
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 #root {
@@ -52,7 +52,7 @@ a.branding {
     padding: 10px;
     border-radius: 5px;
     font-weight: bold;
-    background: #F5F5F6;
+    background: #f5f5f6;
     display: block;
     width: 100%;
 }

@@ -166,7 +166,9 @@ const NavBar = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography className={classes.title} variant="h5" noWrap>
-                        <Link to='/' className='branding'>Ethodoxy</Link>
+                        <Link to="/" className="branding">
+                            Ethodoxy
+                        </Link>
                     </Typography>
 
                     <div className={classes.grow} />

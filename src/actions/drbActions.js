@@ -1,15 +1,20 @@
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
 
-import { DR_BOOKS_URL } from '../constants';
+import constants from '../constants';
 
-import drbActionCreators from './drbActionCreators';
-import utils from './utils';
+import drbAC from './drbAC';
+import utils from '../utils';
 
-export const getDRBBooks = () => {
-    return async (dispatch) => {
-        dispatch(showLoading());
-        const books = await utils.getPaginatedItems(DR_BOOKS_URL);
-        dispatch(drbActionCreators.getDRBBooksAC(books));
-        dispatch(hideLoading());
-    };
+const drbActions = {
+    getDRBBooks: () => {
+        const DR_BOOKS_URL = `${constants.BASE_URL}/books/`;
+        return async dispatch => {
+            dispatch(showLoading());
+            const books = await utils.getPaginatedItems(DR_BOOKS_URL);
+            dispatch(drbAC.getDRBBooks(books));
+            dispatch(hideLoading());
+        };
+    },
 };
+
+export default drbActions;

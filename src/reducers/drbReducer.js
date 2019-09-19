@@ -1,13 +1,13 @@
-import { GET_DRB_BOOKS } from '../actions/actions.types';
+import { drbAT } from '../actions/actions.types';
 
 const initialState = {
-    books: [],
+    books: []
 };
 
-const drbReducer = (state=initialState, action) => {
+const drbReducer = (state = initialState, action) => {
     // console.log('action ....', action);
-    switch(action.type) {
-    case GET_DRB_BOOKS:
+    switch (action.type) {
+    case drbAT.GET_DRB_BOOKS:
         return {
             ...state,
             books: action.booklist

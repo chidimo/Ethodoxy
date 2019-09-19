@@ -14,7 +14,12 @@ const persistConfig = {
     blacklist: [ 'loadingBar' ]
 };
 
-const logger = createLogger();
+const logger = createLogger({
+    diff: true,
+    duration: true,
+    collapsed: true,
+    logErrors: true
+});
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 // const store = createStore(rootReducer, applyMiddleware(logger, thunk));
