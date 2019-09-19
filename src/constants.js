@@ -9,6 +9,7 @@ const constants = {
         axios.defaults.headers.common['Access-Control-Allow-Headers'] =
             'Content-Type';
         axios.defaults.headers.common['Access-Control-Max-Age'] = '3000';
+        // axios.defaults.baseURL = 'http://localhost:8000/api/v1/';
         axios.defaults.baseURL = 'https://ethodoxy.herokuapp.com/api/v1';
     }
 };

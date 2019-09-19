@@ -1,11 +1,13 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import titlecase from 'titlecase';
 import slugify from 'slugify';
 
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import { useSelector } from 'react-redux';
+
+import drbActions from '../actions/drbActions';
 
 const bookStyles = makeStyles({
     container: {
@@ -20,11 +22,16 @@ const itemStyles = makeStyles({
     }
 });
 
-const DouayBooks = () => {
+const DrbBooks = () => {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        drbActions.getDRBBooks()(dispatch);
+    }, [ dispatch ]);
+
     const bookClasses = bookStyles();
     const itemClasses = itemStyles();
 
-    const drbReducer = useSelector(state => state.drbReducer);
+    const { books } = useSelector(state => state.drbReducer);
 
     return (
         <Fragment>
@@ -38,11 +45,13 @@ const DouayBooks = () => {
                     root: bookClasses.container
                 }}
             >
-                {drbReducer.books
+                {books
                     .filter(book => book.testament === 'old testament')
                     .map(book => {
                         const { id, name } = book;
-                        const location = `/douay-rheims-bible/${slugify(name)}`;
+                        const location = `/douay-rheims-bible/${slugify(
+                            name
+                        )}/${id}`;
                         return (
                             <Grid
                                 key={id}
@@ -67,11 +76,13 @@ const DouayBooks = () => {
                     root: bookClasses.container
                 }}
             >
-                {drbReducer.books
+                {books
                     .filter(book => book.testament === 'new testament')
                     .map(book => {
                         const { id, name } = book;
-                        const location = `/douay-rheims-bible/${slugify(name)}`;
+                        const location = `/douay-rheims-bible/${slugify(
+                            name
+                        )}/${id}`;
                         return (
                             <Grid
                                 key={id}
@@ -91,4 +102,4 @@ const DouayBooks = () => {
     );
 };
 
-export default DouayBooks;
+export default DrbBooks;

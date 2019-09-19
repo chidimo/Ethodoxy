@@ -1,7 +1,9 @@
 import { drbAT } from '../actions/actions.types';
 
 const initialState = {
-    books: []
+    books: [],
+    currentBook: [],
+    bookName: ''
 };
 
 const drbReducer = (state = initialState, action) => {
@@ -11,6 +13,18 @@ const drbReducer = (state = initialState, action) => {
         return {
             ...state,
             books: action.booklist
+        };
+    case drbAT.GET_BOOK_BY_ID:
+        return {
+            ...state,
+            currentBook: action.book,
+            bookName: action.book[0]['book_name']
+        };
+    case drbAT.CLEAN_GET_BOOK_BY_ID:
+        return {
+            ...state,
+            currentBook: [],
+            bookName: ''
         };
     default:
         return state;

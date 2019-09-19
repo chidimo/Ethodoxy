@@ -5,7 +5,8 @@ import PublicRoute from '../routes/PublicRoute';
 import Error404 from './Error404';
 
 const Home = lazy(() => import('./Home'));
-const DouayBooks = lazy(() => import('./DrbBooks'));
+const DrbBooks = lazy(() => import('./DrbBooks'));
+const DrbBook = lazy(() => import('./DrbBook'));
 
 const Routes = () => (
     // eslint-disable-next-line no-undef
@@ -16,7 +17,12 @@ const Routes = () => (
                 <PublicRoute
                     exact
                     path="/douay-rheims-bible"
-                    component={DouayBooks}
+                    component={DrbBooks}
+                />
+                <PublicRoute
+                    exact
+                    path="/douay-rheims-bible/:book/:id"
+                    component={DrbBook}
                 />
 
                 {/* catch all invalid urls */}

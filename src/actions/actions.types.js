@@ -3,5 +3,7 @@ export const authAT = {
 };
 
 export const drbAT = {
-    GET_DRB_BOOKS: 'GET_DRB_BOOKS'
+    GET_DRB_BOOKS: 'GET_DRB_BOOKS',
+    GET_BOOK_BY_ID: 'GET_BOOK_BY_ID',
+    CLEAN_GET_BOOK_BY_ID: 'CLEAN_GET_BOOK_BY_ID'
 };

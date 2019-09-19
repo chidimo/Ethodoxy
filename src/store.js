@@ -11,7 +11,7 @@ import rootReducer from './reducers/rootReducer';
 const persistConfig = {
     key: 'root',
     storage,
-    blacklist: [ 'loadingBar' ]
+    blacklist: [ 'loadingBar', 'drbReducer' ]
 };
 
 const logger = createLogger({
