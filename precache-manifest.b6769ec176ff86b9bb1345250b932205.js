@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2c234fa2dc18b8a4601eba0cf0a30437",
+    "revision": "965e78f62fc9dea4203a94fa54b58345",
     "url": "/Ethodoxy/index.html"
   },
   {
