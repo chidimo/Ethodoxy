@@ -1,4 +1,5 @@
 import axios from 'axios';
+import titlecase from 'titlecase';
 
 const utils = {
     getPaginatedItems: async rootURL => {
@@ -11,7 +12,23 @@ const utils = {
             url = next;
         }
         return books;
-    }
+    },
+
+    formatText: (text, textCase) => {
+        switch (textCase) {
+        case 'upper':
+            return text.toUpperCase();
+
+        case 'lower':
+            return text.toLowerCase();
+
+        case 'title':
+            return titlecase(text);
+
+        default:
+            return text;
+        }
+    },
 };
 
 export default utils;

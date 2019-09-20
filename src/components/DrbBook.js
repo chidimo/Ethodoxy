@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import propTypes from 'prop-types';
 
 import drbActions from '../actions/drbActions';
+import utils from '../utils';
 
 const DrbBook = ({ match }) => {
     const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const DrbBook = ({ match }) => {
     }, [ id, dispatch ]);
     return (
         <div>
-            <h2>{bookName.toUpperCase()}</h2>
+            <h2>{utils.formatText(bookName || '', 'title')}</h2>
             {currentBook.map((book, index) => {
                 const { id, text } = book;
                 return (
