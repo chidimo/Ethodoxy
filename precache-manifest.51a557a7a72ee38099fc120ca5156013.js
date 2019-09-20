@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "302239fecca2b176e4fb3650a9335048",
+    "revision": "2c234fa2dc18b8a4601eba0cf0a30437",
     "url": "/Ethodoxy/index.html"
   },
   {
@@ -24,15 +24,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Ethodoxy/static/js/4.5be9fb69.chunk.js"
   },
   {
-    "revision": "f5b99aa5b74ca257d773",
-    "url": "/Ethodoxy/static/js/5.c8478979.chunk.js"
+    "revision": "d74548426ba96914c23c",
+    "url": "/Ethodoxy/static/js/5.4f8b5962.chunk.js"
   },
   {
     "revision": "52ad80ace5c6d7d95edc",
     "url": "/Ethodoxy/static/js/main.dea7b9f0.chunk.js"
   },
   {
-    "revision": "35351b500dbdb092b3aa",
-    "url": "/Ethodoxy/static/js/runtime~main.98d2f605.js"
+    "revision": "2b5881a233f4ec6bf7f5",
+    "url": "/Ethodoxy/static/js/runtime~main.1b2be101.js"
   }
 ]);
