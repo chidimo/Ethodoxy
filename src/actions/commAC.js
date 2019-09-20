@@ -1,10 +1,10 @@
 import { challAT } from './actions.types';
 
 const commAC = {
-    getChallonerPaginated: commentary => ({
-        type: challAT.GET_DRB_BOOKS,
-        commentary,
-    }),
+    getChallonerPaginated: data => ({
+        type: challAT.GET_CHALLONER_PAGINATED,
+        data
+    })
 };
 
 export default commAC;

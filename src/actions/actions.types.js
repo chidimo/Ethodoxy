@@ -9,5 +9,5 @@ export const drbAT = {
 };
 
 export const challAT = {
-    GET_CHALLONER_PAGINATED: 'GET_CHALLONER_PAGINATED',
+    GET_CHALLONER_PAGINATED: 'GET_CHALLONER_PAGINATED'
 };

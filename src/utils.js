@@ -28,7 +28,7 @@ const utils = {
         default:
             return text;
         }
-    },
+    }
 };
 
 export default utils;

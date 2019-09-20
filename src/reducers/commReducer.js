@@ -1,16 +1,19 @@
 import { challAT } from '../actions/actions.types';
 
 const initialState = {
-    commentary: [],
+    results: [],
+    count: 0
 };
 
 const commReducer = (state = initialState, action) => {
-    // console.log('action ....', action);
     switch (action.type) {
     case challAT.GET_CHALLONER_PAGINATED:
         return {
             ...state,
-            commentary: action.commentary,
+            results: action.data.results,
+            count: action.data.count,
+            next: action.data.next,
+            previous: action.data.previous
         };
     default:
         return state;

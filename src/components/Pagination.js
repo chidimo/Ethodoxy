@@ -1,15 +1,16 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import { Container } from '@material-ui/core';
 
 const Pagination = props => {
-    const { skip, dispatch, numberOfPages } = props;
+    const { page, dispatch, numberOfPages } = props;
 
     return (
-        <ul className="uk-pagination uk-flex-center" data-uk-margin>
+        <Container>
             {
                 <a
                     href="/#"
-                    className={skip > 0 ? '' : 'uk-disabled'}
+                    className={page === 1 ? 'disabled' : 'active'}
                     onClick={e => {
                         e.preventDefault();
                         dispatch({ type: 'NAVIGATE_BACKWARD' });
@@ -21,32 +22,31 @@ const Pagination = props => {
 
             {(function() {
                 const pages = [];
-                for (let index = 0; index < numberOfPages; index++) {
+                for (let page = 0; page < numberOfPages; page++) {
                     pages.push(
-                        <li key={index + 1}>
+                        <span key={page + 1}>
                             <a
                                 href="/#"
-                                className={skip === index ? 'uk-active' : ''}
+                                className={'skip === page ? \'uk-active\' : \'\''}
                                 onClick={e => {
                                     e.preventDefault();
                                     dispatch({
                                         type: 'GO_TO_PAGE_NUMBER',
-                                        index
+                                        page: page + 1
                                     });
                                 }}
                             >
-                                {index + 1}
+                                {page + 1}
                             </a>
-                        </li>
+                        </span>
                     );
                 }
                 return pages;
             })()}
-
             {
                 <a
                     href="/#"
-                    className={skip + 1 < numberOfPages ? '' : 'uk-disabled'}
+                    className={page === numberOfPages ? 'active' : 'disabled'}
                     onClick={e => {
                         e.preventDefault();
                         dispatch({ type: 'NAVIGATE_FORWARD' });
@@ -55,12 +55,12 @@ const Pagination = props => {
                     <span>{'>'}</span>
                 </a>
             }
-        </ul>
+        </Container>
     );
 };
 
 Pagination.propTypes = {
-    skip: propTypes.number,
+    page: propTypes.number,
     dispatch: propTypes.func,
     numberOfPages: propTypes.number
 };

@@ -4,20 +4,25 @@ const genericReducers = {
         case 'GO_TO_PAGE_NUMBER':
             return {
                 ...state,
-                skip: action.index
+                page: action.page
             };
         case 'NAVIGATE_FORWARD':
             return {
                 ...state,
-                skip:
-                        state.skip + 1 === state.numberOfPages
-                            ? state.skip
-                            : state.skip + 1
+                page:
+                        state.page === state.numberOfPages
+                            ? state.page
+                            : state.page + 1
             };
         case 'NAVIGATE_BACKWARD':
             return {
                 ...state,
-                skip: state.skip === 0 ? state.skip : state.skip - 1
+                page: state.page === 1 ? state.page : state.page - 1
+            };
+        case 'UPDATE_NUMBER_OF_PAGES':
+            return {
+                ...state,
+                numberOfPages: action.numberOfPages
             };
         default:
             return state;
