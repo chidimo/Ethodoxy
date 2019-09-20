@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Ethodoxy/static/css/main.330dbb9a.chunk.css",
-    "main.js": "/Ethodoxy/static/js/main.f5c6c0d9.chunk.js",
-    "main.js.map": "/Ethodoxy/static/js/main.f5c6c0d9.chunk.js.map",
+    "main.js": "/Ethodoxy/static/js/main.dea7b9f0.chunk.js",
+    "main.js.map": "/Ethodoxy/static/js/main.dea7b9f0.chunk.js.map",
     "runtime~main.js": "/Ethodoxy/static/js/runtime~main.1b2be101.js",
     "runtime~main.js.map": "/Ethodoxy/static/js/runtime~main.1b2be101.js.map",
     "static/css/2.5ec480d0.chunk.css": "/Ethodoxy/static/css/2.5ec480d0.chunk.css",
@@ -15,7 +15,7 @@
     "static/js/5.4f8b5962.chunk.js": "/Ethodoxy/static/js/5.4f8b5962.chunk.js",
     "static/js/5.4f8b5962.chunk.js.map": "/Ethodoxy/static/js/5.4f8b5962.chunk.js.map",
     "index.html": "/Ethodoxy/index.html",
-    "precache-manifest.fd43e9aebf0d6acb012c467f98c73bf0.js": "/Ethodoxy/precache-manifest.fd43e9aebf0d6acb012c467f98c73bf0.js",
+    "precache-manifest.51a557a7a72ee38099fc120ca5156013.js": "/Ethodoxy/precache-manifest.51a557a7a72ee38099fc120ca5156013.js",
     "service-worker.js": "/Ethodoxy/service-worker.js",
     "static/css/2.5ec480d0.chunk.css.map": "/Ethodoxy/static/css/2.5ec480d0.chunk.css.map",
     "static/css/main.330dbb9a.chunk.css.map": "/Ethodoxy/static/css/main.330dbb9a.chunk.css.map"
