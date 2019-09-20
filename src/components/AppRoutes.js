@@ -7,6 +7,7 @@ import Error404 from './Error404';
 const Home = lazy(() => import('./Home'));
 const DrbBooks = lazy(() => import('./DrbBooks'));
 const DrbBook = lazy(() => import('./DrbBook'));
+const Commentary = lazy(() => import('./Commentary'));
 
 const Routes = () => (
     // eslint-disable-next-line no-undef
@@ -23,6 +24,11 @@ const Routes = () => (
                     exact
                     path="/douay-rheims-bible/:book/:id"
                     component={DrbBook}
+                />
+                <PublicRoute
+                    exact
+                    path="/commentary/:comm_name"
+                    component={Commentary}
                 />
 
                 {/* catch all invalid urls */}

@@ -3,15 +3,15 @@ import titlecase from 'titlecase';
 
 const utils = {
     getPaginatedItems: async rootURL => {
-        let books = [];
+        let items = [];
         let url = rootURL;
         while (url) {
             const { data } = await axios.get(url);
             const { results, next } = data;
-            books = books.concat(results);
+            items = items.concat(results);
             url = next;
         }
-        return books;
+        return items;
     },
 
     formatText: (text, textCase) => {

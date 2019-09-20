@@ -32,7 +32,7 @@ const Home = () => {
 
     const books = [
         { id: 1, title: 'Douay-Rheims Bible', location: '/douay-rheims-bible' },
-        { id: 2, title: 'Challoner Commentary', location: '/challoner' }
+        { id: 2, title: 'Challoner Commentary', location: '/commentary/challoner' }
     ];
 
     return (

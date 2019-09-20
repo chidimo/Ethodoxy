@@ -7,3 +7,7 @@ export const drbAT = {
     GET_BOOK_BY_ID: 'GET_BOOK_BY_ID',
     CLEAN_GET_BOOK_BY_ID: 'CLEAN_GET_BOOK_BY_ID'
 };
+
+export const challAT = {
+    GET_CHALLONER_PAGINATED: 'GET_CHALLONER_PAGINATED',
+};
